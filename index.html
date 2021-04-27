@@ -71,18 +71,18 @@
         }
     
         function updateSignInStatus(isSignedIn) {
-            console.log(isSignedIn);
             if (isSignedIn) {
                 login = true;
                 // makeApiCall();
             }
         }
         function Recall() {
-            if (login) {
-                makeApiCall();
-            }else{
-                console.log("Now not login.")
-            }
+            makeApiCall();
+            // if (login) {
+            //     makeApiCall();
+            // }else{
+            //     console.log("Now not login.")
+            // }
         }
     
         function handleSignInClick(event) {
