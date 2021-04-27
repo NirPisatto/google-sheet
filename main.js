@@ -60,7 +60,7 @@ function makeApiCalldelet() {
 function initClient() {
     var API_KEY = 'AIzaSyAZCRR8ktVWhoP6anJ7437edBqfnArREj8';
     var CLIENT_ID ="827615979425-9g76rj4vinmt3vgrojojfsdrft4g9q9g.apps.googleusercontent.com";
-    var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+    var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
     gapi.client.init({'apiKey': API_KEY,'clientId': CLIENT_ID,'scope': SCOPE,'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],})
     .then(function() {
         // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
