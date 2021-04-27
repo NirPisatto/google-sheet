@@ -38,7 +38,7 @@
             var request = gapi.client.sheets.spreadsheets.values.get(params);
             request.then(function(response) {
                 // TODO: Change code below to process the `response` object:
-                console.table(response.result);
+                console.log(response.result);
             }, function(reason) {
                 console.error('error: ' + reason.result.error.message);
             });
@@ -77,6 +77,13 @@
                 makeApiCall();
             }
         }
+        function Recall(isSignedIn) {
+            if (isSignedIn) {
+                makeApiCall();
+            }else{
+                console.log("Now not login.")
+            }
+        }
     
         function handleSignInClick(event) {
             gapi.auth2.getAuthInstance().signIn();
@@ -91,6 +98,7 @@
         </script>
         <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
         <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+        <button id="load-button" onclick="Recall()">Load</button>
     </body>
     
     </html>    
