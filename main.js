@@ -1,3 +1,9 @@
+let DATA;
+let login = false;
+function loding_data(){
+    document.getElementById('text').textContent = DATA.values[0];
+}
+
 function makeApiCall() {
     var params = {
         // The ID of the spreadsheet to retrieve data from.
@@ -20,12 +26,12 @@ function makeApiCall() {
     var request = gapi.client.sheets.spreadsheets.values.get(params);
     request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        console.log(response.result);
+        DATA = response.result;
+        console.log("logined");
     }, function(reason) {
         console.error('error: ' + reason.result.error.message);
     });
 }
-let login = false;
 
 function initClient() {
     var API_KEY = 'AIzaSyAZCRR8ktVWhoP6anJ7437edBqfnArREj8';
@@ -51,6 +57,7 @@ function updateSignInStatus(isSignedIn) {
 }
 function Recall() {
     makeApiCall();
+    loding_data();
     // if (login) {
     //     makeApiCall();
     // }else{
