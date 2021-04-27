@@ -73,7 +73,7 @@
         function updateSignInStatus(isSignedIn) {
             console.log(isSignedIn);
             if (isSignedIn) {
-                makeApiCall();
+                // makeApiCall();
             }
         }
         function Recall() {
@@ -90,6 +90,7 @@
     
         function handleSignOutClick(event) {
             gapi.auth2.getAuthInstance().signOut();
+            login = false;
         }
         </script>
         <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
