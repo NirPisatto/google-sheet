@@ -43,10 +43,10 @@ function makeApiCalldelet() {
       range: 'Sheet1',  // TODO: Update placeholder value.
 
       // How the input data should be interpreted.
-      valueInputOption: 'USER_ENTERED',  // TODO: Update placeholder value.
+      valueInputOption: 'INPUT_VALUE_OPTION_UNSPECIFIED',  // TODO: Update placeholder value.
     };
-    DATA.values[0] = "MISA";
-    var valueRangeBody = DATA;
+
+    var valueRangeBody = {};
 
     var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
     request.then(function(response) {
