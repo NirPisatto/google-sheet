@@ -73,7 +73,7 @@
         function updateSignInStatus(isSignedIn) {
             if (isSignedIn) {
                 login = true;
-                // makeApiCall();
+                makeApiCall();
             }
         }
         function Recall() {
@@ -85,20 +85,20 @@
             // }
         }
     
-        // function handleSignInClick(event) {
-        //     gapi.auth2.getAuthInstance().signIn();
-        // }
+        function handleSignInClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+        }
     
-        // function handleSignOutClick(event) {
-        //     gapi.auth2.getAuthInstance().signOut();
-        //     login = false;
-        // }
+        function handleSignOutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+            login = false;
+        }
         </script>
         <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
             onreadystatechange="if (this.readyState === 'complete') this.onload()">
         </script>
-        <!-- <button id="signin-button" onclick="handleSignInClick()">Sign in</button> -->
-        <!-- <button id="signout-button" onclick="handleSignOutClick()">Sign out</button> -->
+        <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+        <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
         <button id="load-button" onclick="Recall()">Load</button>
     </body>
     
