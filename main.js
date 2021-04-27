@@ -34,6 +34,29 @@ function makeApiCall() {
     });
 }
 
+function makeApiCalldelet() {
+    var params = {
+      // The ID of the spreadsheet to update.
+      spreadsheetId: '1R_6HAMwgHIZlqePXWrxi-CFR_xkq-0lKIK0BCbIGwdw',  // TODO: Update placeholder value.
+
+      // The A1 notation of the values to update.
+      range: 'Sheet1',  // TODO: Update placeholder value.
+
+      // How the input data should be interpreted.
+      valueInputOption: 'USER_ENTERED',  // TODO: Update placeholder value.
+    };
+    DATA.values[0] = "MISA";
+    var valueRangeBody = DATA;
+
+    var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+    request.then(function(response) {
+      // TODO: Change code below to process the `response` object:
+      console.log(response.result);
+    }, function(reason) {
+      console.error('error: ' + reason.result.error.message);
+    });
+  }
+
 function initClient() {
     var API_KEY = 'AIzaSyAZCRR8ktVWhoP6anJ7437edBqfnArREj8';
     var CLIENT_ID ="827615979425-9g76rj4vinmt3vgrojojfsdrft4g9q9g.apps.googleusercontent.com";
