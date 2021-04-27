@@ -27,6 +27,7 @@ function makeApiCall() {
     request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         DATA = response.result;
+        console.log(response.result);
         console.log("logined");
     }, function(reason) {
         console.error('error: ' + reason.result.error.message);
